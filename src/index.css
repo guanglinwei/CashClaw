@@ -35,3 +35,20 @@ code {
   margin-left: 20px;
   margin-right: 20px;
 }
+
+.help{
+  background-color: #adffc7;
+  border: none;
+  color: white;
+  height: 55px;
+  width: 440px;
+  display: block;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 4px 4px 4px gray;
+  transition: background-color .3s;
+  font-family: Poppins;
+  margin-bottom:10px;
+}
+
