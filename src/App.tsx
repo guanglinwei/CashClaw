@@ -1,12 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
+import Popup, { PopupProps } from './component/Popup';
 
 function App() {
+    const displayData: PopupProps[] = [{
+        title: "Title here",
+        content: (
+            <div>
+                Put content here
+            </div>
+        )
+    },];
     return (
         <div className="App">
-            <div className="underline">
-                Hello world
-            </div>
+            <Popup title={"Title"} content={<div>Put </div>} />
         </div>
     );
 }
