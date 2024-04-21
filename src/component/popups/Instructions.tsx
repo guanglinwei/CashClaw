@@ -15,7 +15,6 @@ function Instructions({ onClose }: InstructionsProps) {
                 <p className='welcome'>
                     Welcome to Cash Claw!! Click the button to start and get a prize!
                 </p>
-                {/* <Keys/> */}
                 <div className='together'>
                     <div className="pic">
                         <img src={keys} />

@@ -120,7 +120,7 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
                 move: WIDTH / 100
             },
             render: {
-                background: `rgba(0,0,0,0)`,
+                background: "#FFFFFF",
                 finger: {
                     upperBone: { fillStyle: `rgba(0,0,0,0.2)` },
                     upperBoneJoint: { strokeStyle: `transparent` },
@@ -260,7 +260,7 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
                     collisionFilter: options.collisionFilter.items,
                     density: options.item.density,
                     // render: options.render.item.normal
-                    render: { ...options.render.item.normal, fillStyle: `hsla(${360 * i / count}, ${85 + 15 * Math.random()}%, 50%, 0.8)` }
+                    render: { ...options.render.item.normal, fillStyle: `hsla(${360 * i / count}, 85%, 57%, 0.5)` }
                 });
                 items.push(item);
             }
@@ -647,10 +647,9 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
 
     return (
         <div className='mx-12 py-2'>
-            <div
-                className='mx-auto w-[50%] min-w-fit mt-1 bg-gray-100'
-                ref={boxRef}
-            >
+
+            <div className='mx-auto w-[50%] mt-1 bg-white border-green-600 border-4 rounded-md' ref={boxRef}>
+
                 {/* <canvas ref={canvasRef} /> */}
             </div>
         </div>
