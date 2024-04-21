@@ -13,7 +13,7 @@ function Instructions({ onClose }: InstructionsProps) {
                     How to play?
                 </p>
                 <p className='welcome'>
-                    Welcome to Cash Card!! Click the button to start and get a prize!
+                    Welcome to Cash Claw!! Click the button to start and get a prize!
                 </p>
                 {/* <Keys/> */}
                 <div className='together'>

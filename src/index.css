@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(128, 128, 128, 0.308);
+  background-color: #d8ffe4;
 }
 
 code {
@@ -41,7 +41,7 @@ code {
 }
 
 .help{
-  background-color: #adffc7;
+  background-color: #d8ffe4;
   border: none;
   color: white;
   display: block;

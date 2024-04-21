@@ -37,11 +37,11 @@ function App() {
     const [gamePaused, setGamePaused] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
     useEffect(() => {
-        console.log('here')
+        // console.log('here')
         currentPopup.current = (<Instructions onClose={onModalClosed} />);
         console.log(currentPopup.current);
         setPopupVisible(true);
-        // setGamePaused(false);
+        setGamePaused(false);
     }, []);
 
     const onCraneGameFinish = () => {
@@ -73,10 +73,10 @@ function App() {
                     <Route index element={
                         <div className="App h-screen">
                             {popupVisible ? currentPopup.current : <></>}
-                            <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'>Cash Claw</div>
+                            <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'></div>
                             <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
                         </div>} />
-                    <Route path='/:id' element={<ContentPage />} />
+                    <Route path='/page/:id' element={<ContentPage />} />
                 </Route>
             </Routes>
         </HashRouter>

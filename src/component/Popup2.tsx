@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import "./Popup.css"
 
 
 export interface PopupProps {
@@ -10,7 +9,7 @@ export interface PopupProps {
     showCloseButton?: boolean;
 }
 
-function Popup({ title, content, className, onClose, showCloseButton }: PopupProps) {
+function Popup2({ title, content, className, onClose, showCloseButton }: PopupProps) {
     return (
         <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
@@ -22,8 +21,9 @@ function Popup({ title, content, className, onClose, showCloseButton }: PopupPro
                         </div>
                         {content}
                         <div className='flex-grow-1'>
+                            <hr className='border-b-2' />
                             <div className='flex flex-row w-full align-middle items-center justify-center gap-8'>
-                                <button onClick={onClose}>Close</button>
+                                <button className = "popup_og" onClick={onClose}>Close</button>
                             </div>
                         </div>
                     </div>
@@ -33,4 +33,4 @@ function Popup({ title, content, className, onClose, showCloseButton }: PopupPro
     );
 }
 
-export default Popup;
+export default Popup2;
