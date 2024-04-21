@@ -18,11 +18,16 @@ code {
 }
 
 .pop{
-      padding-top: 20px;
       padding-bottom: 20px;
+      background-color: #b1b1ff;
+}
+
+.con{
+      font-size: 40px;
 }
 
 .caption{
       font-size: 20px;
+      padding-bottom: 20px;
 
 }
