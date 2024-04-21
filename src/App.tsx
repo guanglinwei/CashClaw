@@ -25,9 +25,7 @@ function App() {
                 Welcome to Cash Card!! Click the button to start and get a prize!
             </div>
 
-            <button onClick={help} className = "help">
-                Help?
-            </button>
+            <button className = "help"> <img src = ".\src\help.webp" onClick={help}/></button>
 
             <Popup className="popup"
                 title={"Cash Card"}
