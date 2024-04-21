@@ -3,15 +3,23 @@ import Matter from 'matter-js';
 
 interface CraneGameProps {
     onFinish?: () => void;
+    onResume?: () => void;
+    shouldUnpause?: boolean;
 }
 
-function CraneGame({ onFinish }: CraneGameProps) {
+function CraneGame({ onFinish, onResume, shouldUnpause }: CraneGameProps) {
     const boxRef = useRef(null);
     const engineRef = useRef(null);
     const requestRef = React.useRef(0);
     const appRef = useRef<any>(null);
 
     const [paused, setPaused] = useState(false);
+
+    useEffect(() => {
+        if (shouldUnpause) {
+            onResume?.();
+        }
+    }, [shouldUnpause]);
 
     useEffect(() => {
         if (!appRef || !appRef.current) return;
@@ -284,7 +292,7 @@ function CraneGame({ onFinish }: CraneGameProps) {
             let scheduleGrapTimer: any = null;
             console.log('reg', app)
 
-            Matter.Events.on(app.engine, `tick`, e => {
+            Matter.Events.on(app.engine, `tick`, (e: any) => {
                 // console.log('tick')
                 if (!t0) {
                     // @ts-ignore
@@ -341,7 +349,7 @@ function CraneGame({ onFinish }: CraneGameProps) {
                 }
             });
 
-            Matter.Events.on(app.engine, `tick`, e => {
+            Matter.Events.on(app.engine, `tick`, (e: any) => {
                 // handle item is exited
                 for (const item of app.items) {
                     if (item.position.y > HEIGHT && item.position.x < CLAW_WIDTH) {
