@@ -73,7 +73,7 @@ function App() {
     };
 
     return (
-        <HashRouter basename={`/${process.env.PUBLIC_URL}`}>
+        <HashRouter>
             <Navbar />
             <Routes>
                 <Route path='/'>
