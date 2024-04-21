@@ -1,14 +1,12 @@
+import { useState } from 'react';
+import CraneGame from './component/CraneGame';
 import Popup, { PopupProps } from './component/Popup';
 import React from 'react';
-<<<<<<< Updated upstream
-=======
 import Navbar from './component/Navbar';
 import CreditCardPopup from './component/popups/CreditCardPopup';
 import Instructions from './component/popups/Instructions';
->>>>>>> Stashed changes
 
 function App() {
-
     const displayData: PopupProps[] = [{
         title: "Title here",
         content: (
@@ -19,8 +17,8 @@ function App() {
     },]
     const help = () => {
         alert('Hello')
-    }
-;
+    };
+  /*
     return (
 
         <div className="App">
@@ -44,11 +42,22 @@ function App() {
                 
                 } 
             />
-
-<<<<<<< Updated upstream
+    };
+    */
+  
+    const [popupVisible, setPopupVisible] = useState(true);
+    const onCraneGameFinish = () => {
+        console.log("Go to next page");
+        setPopupVisible(true);
+    };
+    return (
+        <div className="App h-screen">
+            <Navbar/>
+            {popupVisible ? <Popup title={"Title"} content={<div>Put </div>} /> : <></>}
+            <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+            <CraneGame onFinish={onCraneGameFinish} />
         </div>
-        
-=======
+        /*
     return (
         <Instructions/>
         // <div className="App h-screen">
@@ -57,7 +66,7 @@ function App() {
         //     <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
         //     <CraneGame onFinish={onCraneGameFinish} />
         // </div>
->>>>>>> Stashed changes
+        */
     );
 }
 

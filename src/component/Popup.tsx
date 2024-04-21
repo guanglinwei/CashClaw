@@ -4,16 +4,12 @@ export interface PopupProps {
     title: string;
     content: React.ReactNode;
     className?: string;
-    // ... add more stuff here
+    onClose?: () => void;
+    showCloseButton?: boolean;
 }
 
-function Popup({ title, content, className }: PopupProps) {
+function Popup({ title, content, className, onClose, showCloseButton }: PopupProps) {
     return (
-<<<<<<< Updated upstream
-        <div className={`mx-auto px-8 ${className || ''}`}>
-            <div className='font-semibold text-2xl text-center my-2'>
-                {title}
-=======
         <div className="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
             <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
@@ -31,7 +27,6 @@ function Popup({ title, content, className }: PopupProps) {
                         </div>
                     </div>
                 </div>
->>>>>>> Stashed changes
             </div>
             {content}
         </div>
