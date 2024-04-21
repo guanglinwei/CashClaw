@@ -13,9 +13,9 @@ function CreditCardPopup({ onClose }: CreditCardPopupProps) {
                     Congrats!
                 </p>
                 <p>
-                    You have gotten a token! Click the link below to get the referral and start making money.
+                    You got a token! Click the link below to get the referral and start making money.
                 </p>
-                
+
                 <PageLink linkTo='creditcard' text='Click here!' />
             </div>
         )} />

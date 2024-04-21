@@ -5,10 +5,10 @@ function Navbar() {
   return (
     <div className="py-2 border-4 border-green-400 absolute top-0 w-full text-5xl text-green-400 flex items-center justify-center font-kanit font-semibold">
             <p className= "animate-slidein">
-                Cash Card
+                Cash Claw
             </p>
             {/* <div className="desc">
-                Welcome to Cash Card!! Click the button to start and get a prize!
+                Welcome to Cash Claw!! Click the button to start and get a prize!
             </div> */}
         </div>
   )

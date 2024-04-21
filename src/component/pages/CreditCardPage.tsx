@@ -1,5 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import PageLink from '../PageLink';
 
 const content = "Free $100 for signing up";
 const url = "https://refer.discover.com/s/sonicrules1212?advocate.partner_share_id=9790184177";
@@ -33,6 +34,10 @@ function CreditCardPage() {
                 title="Now that you understand, sign up!"
                 contentNode={<a className='font-semibold border-2 border-black rounded-md mt-4 px-2 py-0.5' href={url}>{content}</a>}
             />}
+
+            <div className='mt-4 mx-8'>
+                <Link className='underline font-semibold' to='/'>Go Back</Link>
+            </div>
         </div>
     );
 };
