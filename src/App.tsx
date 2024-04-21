@@ -15,12 +15,16 @@ function App() {
           They have sign up bonuses that give you $100 for FREE and can have up to 5% cashback on categories like restaurant purchases or amazon purchases. This cashback can be redeemed for cash or for gift cards at a 10% discount. Using a credit card is simply just superior to cash or a debit card. This also helps build your credit score so you can have cheaper mortgage rates or car loans when you need those.
         </p>
         */
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import CraneGame from './component/CraneGame';
 import Popup, { PopupProps } from './component/Popup';
 import React from 'react';
 import Navbar from './component/Navbar';
-
+import CreditCardPopup from './component/popups/CreditCardPopup';
+import Instructions from './component/popups/Instructions';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
+import ContentPage from './component/ContentPage';
+// import TestPage from './component/pages/TestPage';
 function App() {
     const displayData: PopupProps[] = [{
         title: "Title here",
@@ -33,50 +37,85 @@ function App() {
     const help = () => {
         alert('Hello')
     };
-  /*
-    return (
-
-        <div className="App">
-            <p className="cash">
-                Cash Card
-            </p>
-            <div className="desc">
-                Welcome to Cash Card!! Click the button to start and get a prize!
-            </div>
-
-            <button className = "help"> <img src = ".\src\help.webp" onClick={help}/></button>
-
-            <Popup className="popup"
-                title={"Cash Card"}
-                content={
-                <div>
-                    <div>
-                        Thank You! Click the link to continue.
-                    </div>
-                </div>
-                
-                } 
-            />
-    };
-    */
+    /*
+      return (
   
+          <div className="App">
+              <p className="cash">
+                  Cash Card
+              </p>
+              <div className="desc">
+                  Welcome to Cash Card!! Click the button to start and get a prize!
+              </div>
+  
+              <button className = "help"> <img src = ".\src\help.webp" onClick={help}/></button>
+  
+              <Popup className="popup"
+                  title={"Cash Card"}
+                  content={
+                  <div>
+                      <div>
+                          Thank You! Click the link to continue.
+                      </div>
+                  </div>
+                  
+                  } 
+              />
+      };
+      */
+
+    const onModalClosed = () => {
+        console.log("modal closed")
+        setGamePaused(false);
+        setPopupVisible(false)
+    };
+    const possiblePopups = [<CreditCardPopup onClose={onModalClosed} />];
+    const currentPopup = useRef<React.ReactNode>(undefined);
+
+    const [gamePaused, setGamePaused] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
+    useEffect(() => {
+        currentPopup.current = (<Instructions onClose={onModalClosed} />);
+        setPopupVisible(true);
+        // setGamePaused(false);
+    }, []);
+
     const onCraneGameFinish = () => {
-        console.log("Go to next page");
+        const index = Math.floor(Math.random() * possiblePopups.length);
+        currentPopup.current = possiblePopups[index];
+        console.log(currentPopup)
         setPopupVisible(true);
     };
-    const onModalClosed = () => {
-        setPopupVisible(false)
-        
-    };
 
     return (
-        <div>
-            <Navbar />
-            {popupVisible ? <Popup title={"Title"} content={<div>Put content here</div>} onClose={onModalClosed} /> : <></>}
+        // <div className="App h-screen">
+        //     <Navbar/>
+        //     {popupVisible ? <Popup title={"Title"} content={<div>Put </div>} /> : <></>}
+        //     <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+        //     <CraneGame onFinish={onCraneGameFinish} />
+        // </div>
 
-            <CraneGame onFinish={onCraneGameFinish} />
-        </div>
+        // <Instructions/>
+        // <div className="App h-screen">
+        //     <Navbar/>
+        //     {popupVisible ? <Popup title={"Title"} content={<div>Put content here</div>} onClose={onModalClosed} /> : <></>}
+        //     <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+        //     <CraneGame onFinish={onCraneGameFinish} />
+        // </div>
+        <HashRouter>
+            <Navbar />
+            <Routes>
+                <Route path='/'>
+                    <Route index element={
+                        <div className="App h-screen">
+                            {popupVisible ? currentPopup.current : <></>}
+                            <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+                            <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
+                        </div>} />
+                    <Route path='/:id' element={<ContentPage />} />
+                </Route>
+            </Routes>
+        </HashRouter>
     );
 }
 
