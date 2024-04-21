@@ -493,7 +493,7 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
             const arm = Matter.Composite.create();
             const bones = [];
             const boneHeight = HEIGHT / (boneCount - 2); // extra N more bone length
-            console.log(boneHeight, boneCount);
+            // console.log(boneHeight, boneCount);
             // for (const i of Array(boneCount).keys()) {
             for (let i = 0; i < boneCount; i++) {
                 const bone = Matter.Bodies.rectangle(
@@ -647,7 +647,9 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
 
     return (
         <div className='mx-12 py-2'>
+
             <div className='mx-auto w-[50%] mt-1 bg-white border-green-600 border-4 rounded-md' ref={boxRef}>
+
                 {/* <canvas ref={canvasRef} /> */}
             </div>
         </div>

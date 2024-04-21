@@ -12,11 +12,13 @@ function CreditCardPopup({ onClose }: CreditCardPopupProps) {
                 <p className='con'>
                     Congrats!
                 </p>
-                <p>
+                <p className='token'>
                     You got a token! Click the link below to get $100!
                 </p>
-
-                <PageLink linkTo='creditcard' text='Click here!' />
+                <div className='link'>
+                    <PageLink linkTo='creditcard' text='Click here!' />
+                </div>
+                
             </div>
         )} />
     );

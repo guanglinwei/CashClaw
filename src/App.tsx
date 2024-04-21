@@ -38,11 +38,11 @@ function App() {
     const [gamePaused, setGamePaused] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
     useEffect(() => {
-        console.log('here')
+        // console.log('here')
         currentPopup.current = (<Instructions onClose={onModalClosed} />);
         console.log(currentPopup.current);
         setPopupVisible(true);
-        // setGamePaused(false);
+        setGamePaused(false);
     }, []);
 
     const onCraneGameFinish = () => {

@@ -19,7 +19,11 @@ code {
 
 .pop{
       padding-bottom: 20px;
-      background-color: #b1b1ff;
+      background-color: #bcbcff !important;
+}
+
+.token{
+  margin-bottom: 15px;
 }
 
 .con{
