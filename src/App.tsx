@@ -60,15 +60,20 @@ function App() {
     };
     */
   
-    const [popupVisible, setPopupVisible] = useState(true);
+    const [popupVisible, setPopupVisible] = useState(false);
     const onCraneGameFinish = () => {
         console.log("Go to next page");
         setPopupVisible(true);
     };
+    const onModalClosed = () => {
+        setPopupVisible(false)
+        
+    };
+
     return (
         <div className="App h-screen">
             <Navbar/>
-            {popupVisible ? <Popup title={"Title"} content={<div>Put </div>} /> : <></>}
+            {popupVisible ? <Popup title={"Title"} content={<div>Put content here</div>} onClose={onModalClosed} /> : <></>}
             <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
             <CraneGame onFinish={onCraneGameFinish} />
         </div>

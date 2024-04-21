@@ -3,15 +3,23 @@ import Matter from 'matter-js';
 
 interface CraneGameProps {
     onFinish?: () => void;
+    onResume?: () => void;
+    shouldUnpause?: boolean;
 }
 
-function CraneGame({ onFinish }: CraneGameProps) {
+function CraneGame({ onFinish, onResume, shouldUnpause }: CraneGameProps) {
     const boxRef = useRef(null);
     const engineRef = useRef(null);
     const requestRef = React.useRef(0);
     const appRef = useRef<any>(null);
 
     const [paused, setPaused] = useState(false);
+
+    useEffect(() => {
+        if (shouldUnpause) {
+            onResume?.();
+        }
+    }, [shouldUnpause]);
 
     useEffect(() => {
         if (!appRef || !appRef.current) return;
