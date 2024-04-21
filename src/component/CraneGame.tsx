@@ -648,7 +648,7 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
     return (
         <div className='mx-12 py-2'>
             <div
-                className='mx-auto w-[50%] mt-1'
+                className='mx-auto w-[50%] mt-1 bg-gray-100'
                 ref={boxRef}
             >
                 {/* <canvas ref={canvasRef} /> */}
