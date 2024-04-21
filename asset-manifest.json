@@ -1,18 +1,16 @@
 {
   "files": {
-    "main.css": "/CashClaw/static/css/main.7d17901f.css",
-    "main.js": "/CashClaw/static/js/main.680dc290.js",
+    "main.css": "/CashClaw/static/css/main.0320f4b1.css",
+    "main.js": "/CashClaw/static/js/main.d8d22483.js",
     "static/js/453.6bd5d5b2.chunk.js": "/CashClaw/static/js/453.6bd5d5b2.chunk.js",
-    "static/media/robert.jpeg": "/CashClaw/static/media/robert.36ce50fe81072da1ac41.jpeg",
-    "static/media/card.png": "/CashClaw/static/media/card.1cbb47b3a638be4b2e1b.png",
     "static/media/arrow_keys.png": "/CashClaw/static/media/arrow_keys.eb80d6a4d8441c1f48e0.png",
     "index.html": "/CashClaw/index.html",
-    "main.7d17901f.css.map": "/CashClaw/static/css/main.7d17901f.css.map",
-    "main.680dc290.js.map": "/CashClaw/static/js/main.680dc290.js.map",
+    "main.0320f4b1.css.map": "/CashClaw/static/css/main.0320f4b1.css.map",
+    "main.d8d22483.js.map": "/CashClaw/static/js/main.d8d22483.js.map",
     "453.6bd5d5b2.chunk.js.map": "/CashClaw/static/js/453.6bd5d5b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d17901f.css",
-    "static/js/main.680dc290.js"
+    "static/css/main.0320f4b1.css",
+    "static/js/main.d8d22483.js"
   ]
 }
