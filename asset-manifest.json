@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/CashClaw/static/css/main.e8393661.css",
-    "main.js": "/CashClaw/static/js/main.38922678.js",
+    "main.css": "/CashClaw/static/css/main.3338e5c8.css",
+    "main.js": "/CashClaw/static/js/main.02d4a0b3.js",
     "static/js/453.6bd5d5b2.chunk.js": "/CashClaw/static/js/453.6bd5d5b2.chunk.js",
     "static/media/arrow_keys.png": "/CashClaw/static/media/arrow_keys.eb80d6a4d8441c1f48e0.png",
     "index.html": "/CashClaw/index.html",
-    "main.e8393661.css.map": "/CashClaw/static/css/main.e8393661.css.map",
-    "main.38922678.js.map": "/CashClaw/static/js/main.38922678.js.map",
+    "main.3338e5c8.css.map": "/CashClaw/static/css/main.3338e5c8.css.map",
+    "main.02d4a0b3.js.map": "/CashClaw/static/js/main.02d4a0b3.js.map",
     "453.6bd5d5b2.chunk.js.map": "/CashClaw/static/js/453.6bd5d5b2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e8393661.css",
-    "static/js/main.38922678.js"
+    "static/css/main.3338e5c8.css",
+    "static/js/main.02d4a0b3.js"
   ]
 }
