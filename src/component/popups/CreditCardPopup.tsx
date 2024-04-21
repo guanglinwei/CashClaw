@@ -3,9 +3,17 @@ import './CreditCardPopup.css'
 
 function CreditCardPopup() {
     return (
-        <Popup title='Congrats' className = "pop" content={(
+        <Popup title='' className = "pop" content={(
             <div className="caption">
-                You have gotten a token! Click this link to get the referral and start making money.
+                <p className='con'>
+                    Congrats!
+                </p>
+                <p>
+                    You have gotten a token! Click this link to get the referral and start making money.
+                </p>
+                <button>
+                    link
+                </button>
             </div>
         )} />
     );

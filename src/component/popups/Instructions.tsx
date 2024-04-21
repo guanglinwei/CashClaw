@@ -4,14 +4,24 @@ import keys from './arrow_keys.png';
 
 function Instructions() {
       return (
-            <Popup title='How to play?' className="intro" content={(
+            <Popup title='' className="intro" content={(
                   <div className="how">
-
-                        <p>
+                        <p className='play'>
+                              How to play?
+                        </p>
+                        <p className='welcome'>
                               Welcome to Cash Card!! Click the button to start and get a prize!
                         </p>
                         {/* <Keys/> */}
-                        <img src={keys} />
+                        <div className='together'>
+                              <div className = "pic">
+                                    <img src={keys} />
+                              </div>
+                              <div className = "instr">
+                                    Use the left and right keys to move the claw side to side. Then use the down key once you have chosen a token to pick up.
+                              </div>
+                        </div>
+                        
                   </div>
             )} />
       );

@@ -17,7 +17,37 @@ code {
     monospace;
 }
 
+
 .intro{
   width: 60%;
   height: 50%;
+  background-color: rgb(255, 180, 192);
+  padding-bottom: 20px;
+}
+
+
+.play{
+  font-size: 40px;
+}
+
+.welcome{
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+
+.together{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.pic{
+  display: inline-block;
+}
+
+.instr{
+  display: inline-block;
+  font-size: 20px;
 }

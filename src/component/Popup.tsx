@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export interface PopupProps {
     title: string;
     content: React.ReactNode;
@@ -22,7 +23,7 @@ function Popup({ title, content, className, onClose, showCloseButton }: PopupPro
                         <div className='flex-grow-1'>
                             <hr className='border-b-2' />
                             <div className='flex flex-row w-full align-middle items-center justify-center gap-8'>
-                                <button onClick={onClose}>Close</button>
+                                <button className = "popup_og" onClick={onClose}>Close</button>
                             </div>
                         </div>
                     </div>

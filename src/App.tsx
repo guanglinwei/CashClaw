@@ -58,7 +58,7 @@ function App() {
         //     <CraneGame onFinish={onCraneGameFinish} />
         // </div>
         
-        <Instructions/>
+        <CreditCardPopup/>
         // <div className="App h-screen">
         //     <Navbar/>
         //     {popupVisible ? <Popup title={"Title"} content={<div>Put content here</div>} onClose={onModalClosed} /> : <></>}
