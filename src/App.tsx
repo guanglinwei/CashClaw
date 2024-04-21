@@ -20,6 +20,8 @@ import CraneGame from './component/CraneGame';
 import Popup, { PopupProps } from './component/Popup';
 import React from 'react';
 import Navbar from './component/Navbar';
+import CreditCardPopup from './component/popups/CreditCardPopup';
+import Instructions from './component/popups/Instructions';
 import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import ContentPage from './component/ContentPage';
 // import TestPage from './component/pages/TestPage';
@@ -73,6 +75,20 @@ function App() {
     };
 
     return (
+        // <div className="App h-screen">
+        //     <Navbar/>
+        //     {popupVisible ? <Popup title={"Title"} content={<div>Put </div>} /> : <></>}
+        //     <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+        //     <CraneGame onFinish={onCraneGameFinish} />
+        // </div>
+        
+        // <Instructions/>
+        // <div className="App h-screen">
+        //     <Navbar/>
+        //     {popupVisible ? <Popup title={"Title"} content={<div>Put content here</div>} onClose={onModalClosed} /> : <></>}
+        //     <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+        //     <CraneGame onFinish={onCraneGameFinish} />
+        // </div>
         <HashRouter>
             <Navbar />
             <Routes>

@@ -23,12 +23,12 @@ function Popup({ title, content, className, onClose, showCloseButton }: PopupPro
                             <hr className='border-b-2' />
                             <div className='flex flex-row w-full align-middle items-center justify-center gap-8'>
                                 <button onClick={onClose}>Close</button>
-                                <button>Test</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            {content}
         </div>
     );
 }
