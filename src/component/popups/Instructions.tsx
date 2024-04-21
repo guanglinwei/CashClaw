@@ -1,8 +1,10 @@
 import Popup from '../Popup';
 import './Instructions.css';
 import keys from './arrow_keys.png';
-
-function Instructions() {
+interface InstructionsProps {
+    onClose?: () => void;
+}
+function Instructions({ onClose }: InstructionsProps) {
       return (
             <Popup title='' className="intro" content={(
                   <div className="how">

@@ -1,7 +1,10 @@
 import Popup from '../Popup';
 import './CreditCardPopup.css'
 
-function CreditCardPopup() {
+interface CreditCardPopupProps {
+    onClose?: () => void;
+}
+function CreditCardPopup({ onClose }: CreditCardPopupProps) {
     return (
         <Popup title='' className = "pop" content={(
             <div className="caption">

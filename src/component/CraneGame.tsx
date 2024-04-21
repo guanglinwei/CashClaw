@@ -4,22 +4,23 @@ import Matter from 'matter-js';
 interface CraneGameProps {
     onFinish?: () => void;
     onResume?: () => void;
-    shouldUnpause?: boolean;
+    paused?: boolean;
+    setPaused?: (x: boolean) => void;
 }
 
-function CraneGame({ onFinish, onResume, shouldUnpause }: CraneGameProps) {
+function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
     const boxRef = useRef(null);
     const engineRef = useRef(null);
     const requestRef = React.useRef(0);
     const appRef = useRef<any>(null);
 
-    const [paused, setPaused] = useState(false);
+    // const [paused, setPaused] = useState(false);
 
-    useEffect(() => {
-        if (shouldUnpause) {
-            onResume?.();
-        }
-    }, [shouldUnpause]);
+    // useEffect(() => {
+    //     if (shouldUnpause) {
+    //         onResume?.();
+    //     }
+    // }, [shouldUnpause]);
 
     useEffect(() => {
         if (!appRef || !appRef.current) return;
@@ -27,6 +28,7 @@ function CraneGame({ onFinish, onResume, shouldUnpause }: CraneGameProps) {
             // console.log(item);
             item.isStatic = paused;
         }
+        if (!paused) onResume?.();
     }, [paused]);
 
     const animate = useCallback((time: any) => {
@@ -150,7 +152,7 @@ function CraneGame({ onFinish, onResume, shouldUnpause }: CraneGameProps) {
             level: 1,
             onGainItem(item: any) {
                 // console.log(item);
-                setPaused(true);
+                setPaused?.(true);
                 onFinish?.();
                 // appRef.current.gained += item.area;
                 // let finished = Math.min(1, appRef.current.gained / appRef.current.targetGain);
