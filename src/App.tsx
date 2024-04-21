@@ -73,7 +73,7 @@ function App() {
                     <Route index element={
                         <div className="App h-screen">
                             {popupVisible ? currentPopup.current : <></>}
-                            <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'>Cash Claw</div>
+                            <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'></div>
                             <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
                         </div>} />
                     <Route path='/:id' element={<ContentPage />} />
