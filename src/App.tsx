@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import logo from './logo.svg';
 import './CreditCardPage.css'
@@ -13,6 +14,63 @@ function App() {
         <p className="description">
           They have sign up bonuses that give you $100 for FREE and can have up to 5% cashback on categories like restaurant purchases or amazon purchases. This cashback can be redeemed for cash or for gift cards at a 10% discount. Using a credit card is simply just superior to cash or a debit card. This also helps build your credit score so you can have cheaper mortgage rates or car loans when you need those.
         </p>
+        */
+import { useState } from 'react';
+import CraneGame from './component/CraneGame';
+import Popup, { PopupProps } from './component/Popup';
+import React from 'react';
+import Navbar from './component/Navbar';
+
+function App() {
+    const displayData: PopupProps[] = [{
+        title: "Title here",
+        content: (
+            <div>
+                Put content here
+            </div>
+        )
+    },]
+    const help = () => {
+        alert('Hello')
+    };
+  /*
+    return (
+
+        <div className="App">
+            <p className="cash">
+                Cash Card
+            </p>
+            <div className="desc">
+                Welcome to Cash Card!! Click the button to start and get a prize!
+            </div>
+
+            <button className = "help"> <img src = ".\src\help.webp" onClick={help}/></button>
+
+            <Popup className="popup"
+                title={"Cash Card"}
+                content={
+                <div>
+                    <div>
+                        Thank You! Click the link to continue.
+                    </div>
+                </div>
+                
+                } 
+            />
+    };
+    */
+  
+    const [popupVisible, setPopupVisible] = useState(true);
+    const onCraneGameFinish = () => {
+        console.log("Go to next page");
+        setPopupVisible(true);
+    };
+    return (
+        <div className="App h-screen">
+            <Navbar/>
+            {popupVisible ? <Popup title={"Title"} content={<div>Put </div>} /> : <></>}
+            <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+            <CraneGame onFinish={onCraneGameFinish} />
         </div>
     );
 }
