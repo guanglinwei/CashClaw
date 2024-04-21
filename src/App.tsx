@@ -29,7 +29,7 @@ function App() {
     const displayData: PopupProps[] = [{
         title: "Title here",
         content: (
-            <div>
+            <div>c 
                 Put content here
             </div>
         )
