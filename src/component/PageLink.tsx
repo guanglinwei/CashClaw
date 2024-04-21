@@ -6,7 +6,7 @@ interface PageLinkInterface {
 }
 function PageLink({ linkTo, text }: PageLinkInterface) {
     return (
-        <Link className='border-2 px-2 rounded-md' to={`/${linkTo}`}>{text}</Link>
+        <Link className='border-2 px-2 rounded-md' to={`/page/${linkTo}`}>{text}</Link>
     )
 }
 

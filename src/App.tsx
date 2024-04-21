@@ -76,7 +76,7 @@ function App() {
                             <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'>Cash Claw</div>
                             <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
                         </div>} />
-                    <Route path='/:id' element={<ContentPage />} />
+                    <Route path='/page/:id' element={<ContentPage />} />
                 </Route>
             </Routes>
         </HashRouter>

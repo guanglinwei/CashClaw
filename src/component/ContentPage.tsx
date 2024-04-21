@@ -34,6 +34,7 @@ function ContentPage({ }) {
     };
 
     useEffect(() => {
+        console.log(id);
         if (!id) {
             setPageData({});
             return;
