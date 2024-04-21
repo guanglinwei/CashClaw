@@ -16,13 +16,38 @@ function App() {
     const help = () => {
         alert('Hello')
     };
+  /*
+    return (
+
+        <div className="App">
+            <p className="cash">
+                Cash Card
+            </p>
+            <div className="desc">
+                Welcome to Cash Card!! Click the button to start and get a prize!
+            </div>
+
+            <button className = "help"> <img src = ".\src\help.webp" onClick={help}/></button>
+
+            <Popup className="popup"
+                title={"Cash Card"}
+                content={
+                <div>
+                    <div>
+                        Thank You! Click the link to continue.
+                    </div>
+                </div>
+                
+                } 
+            />
+    };
+    */
   
     const [popupVisible, setPopupVisible] = useState(true);
     const onCraneGameFinish = () => {
         console.log("Go to next page");
         setPopupVisible(true);
     };
-
     return (
         <div className="App h-screen">
             <Navbar/>

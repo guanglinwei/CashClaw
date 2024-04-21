@@ -40,15 +40,16 @@ code {
   background-color: #adffc7;
   border: none;
   color: white;
-  height: 55px;
-  width: 440px;
   display: block;
-  border-radius: 10px;
-  font-weight: bold;
-  font-size: 20px;
-  box-shadow: 4px 4px 4px gray;
+  border-radius: 25px;
   transition: background-color .3s;
   font-family: Poppins;
   margin-bottom:10px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  height: 50px;
+  width: 50px;
+
 }
 
