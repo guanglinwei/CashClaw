@@ -28,7 +28,6 @@ function Popup({ title, content, className, onClose, showCloseButton }: PopupPro
                     </div>
                 </div>
             </div>
-            {content}
         </div>
     );
 }
