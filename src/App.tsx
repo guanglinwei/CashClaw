@@ -20,7 +20,7 @@ import CraneGame from './component/CraneGame';
 import Popup, { PopupProps } from './component/Popup';
 import React from 'react';
 import Navbar from './component/Navbar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import ContentPage from './component/ContentPage';
 // import TestPage from './component/pages/TestPage';
 function App() {
@@ -73,7 +73,7 @@ function App() {
     };
 
     return (
-        <BrowserRouter basename={`/${process.env.PUBLIC_URL}`}>
+        <HashRouter basename={`/${process.env.PUBLIC_URL}`}>
             <Navbar />
             <Routes>
                 <Route path='/'>
@@ -86,7 +86,7 @@ function App() {
                     <Route path='/:id' element={<ContentPage />} />
                 </Route>
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
