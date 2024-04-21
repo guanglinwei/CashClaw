@@ -6,12 +6,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-<<<<<<< Updated upstream
-  background-color: #5eff83;
-  color: white;
-=======
   background-color: rgba(128, 128, 128, 0.308);
->>>>>>> Stashed changes
 }
 
 code {
