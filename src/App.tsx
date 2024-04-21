@@ -20,6 +20,7 @@ import CraneGame from './component/CraneGame';
 import Popup, { PopupProps } from './component/Popup';
 import React from 'react';
 import Navbar from './component/Navbar';
+import Help from './component/Help';
 import CreditCardPopup from './component/popups/CreditCardPopup';
 import Instructions from './component/popups/Instructions';
 import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
@@ -51,6 +52,13 @@ function App() {
         setPopupVisible(true);
     };
 
+    const onHelpClick = () => {
+        currentPopup.current = (<Instructions onClose={onModalClosed} />);
+        console.log(currentPopup.current);
+        setPopupVisible(true);
+
+    }
+
     return (
         // <div className="App h-screen">
         //     <Navbar/>
@@ -73,12 +81,25 @@ function App() {
                     <Route index element={
                         <div className="App h-screen">
                             {popupVisible ? currentPopup.current : <></>}
-                            <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'></div>
+                            <div className='text-2xl text-center mx-auto font-semibold pb-1 pt-20'></div>
+                            <div className='text-xl text-center mx-auto font-semibold pb-3 pt-20'></div>
                             <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
                         </div>} />
                     <Route path='/page/:id' element={<ContentPage />} />
                 </Route>
             </Routes>
+
+            {/* work on help button here */}
+            <div className='absolute bottom-4 left-4'>
+            <button
+                onClick={() => onHelpClick()}
+                className="block text-white bg-green-600 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-1 text-center opacity-75"
+                type="button"
+            >
+                <p className="font-kanit text-xl">?</p>
+            </button>
+        </div>
+
         </HashRouter>
     );
 }

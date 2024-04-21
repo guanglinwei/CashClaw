@@ -19,10 +19,10 @@ function Popup2({ title, content, className, onClose, showCloseButton }: PopupPr
                         <div className='font-semibold text-2xl text-center my-2'>
                             {title}
                         </div>
-                        {content}
                         <div className='flex-grow-1'>
                             <hr className='border-b-2' />
-                            <div className='flex flex-row w-full align-middle items-center justify-center gap-8'>
+                            <div className='flex flex-row w-full align-middle items-
+                        {content}center justify-center gap-8'>
                                 <button className = "popup_og" onClick={onClose}>Close</button>
                             </div>
                         </div>
