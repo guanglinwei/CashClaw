@@ -27,7 +27,7 @@ function CreditCardPage() {
                     "They have sign up bonuses that give you $100 for FREE and can have up to 5% cashback on categories like restaurant purchases or Amazon purchases.",
                     "This cashback can be redeemed for cash or for gift cards at a 10% discount.",
                     "Using a credit card is simply just superior to cash or a debit card.",
-                    "You can build your credit score so you can have cheaper mortgage rates or car loans when you need those. TEST"
+                    "You can build your credit score so you can have cheaper mortgage rates or car loans when you need those."
                 ]}
             />
             {<PageSection
