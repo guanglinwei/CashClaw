@@ -1,5 +1,6 @@
 import Popup, { PopupProps } from './component/Popup';
 import React from 'react';
+import Navbar from './component/Navbar';
 
 function App() {
 
@@ -17,31 +18,7 @@ function App() {
 ;
     return (
 
-        <div className="App">
-            <p className="cash">
-                Cash Card
-            </p>
-            <div className="desc">
-                Welcome to Cash Card!! Click the button to start and get a prize!
-            </div>
-
-            <button onClick={help} className = "help">
-                Help?
-            </button>
-
-            <Popup className="popup"
-                title={"Cash Card"}
-                content={
-                <div>
-                    <div>
-                        Thank You! Click the link to continue.
-                    </div>
-                </div>
-                
-                } 
-            />
-
-        </div>
+        <Navbar/>
         
     );
 }
