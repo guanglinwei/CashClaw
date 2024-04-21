@@ -71,7 +71,7 @@ function App() {
     };
 
     return (
-        <div className="bg-gray-600:">
+        <div>
             <Navbar />
             {popupVisible ? <Popup title={"Title"} content={<div>Put content here</div>} onClose={onModalClosed} /> : <></>}
 
