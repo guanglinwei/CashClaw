@@ -31,6 +31,8 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
         if (!paused) onResume?.();
     }, [paused]);
 
+    // Credit to: https://codepen.io/w3kmike/pen/aPYPop
+
     const animate = useCallback((time: any) => {
         if (paused) return;
         // console.log(time);
