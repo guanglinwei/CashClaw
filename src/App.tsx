@@ -82,14 +82,8 @@ function App() {
                         <div className="App h-screen">
                             {popupVisible ? currentPopup.current : <></>}
                             <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'></div>
-                            <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
-                        </div>} />
-                    <Route path='/page/:id' element={<ContentPage />} />
-                </Route>
-            </Routes>
-
-            {/* work on help button here */}
-            <div className='absolute bottom-4 left-4'>
+                            {/* work on help button here */}
+            <div className='absolute bottom-10 left-4'>
             <button
                 onClick={() => onHelpClick()}
                 className="block text-white bg-green-600 hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-3 py-1 text-center opacity-75"
@@ -98,6 +92,13 @@ function App() {
                 <p className="font-kanit text-xl">?</p>
             </button>
         </div>
+                            <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
+                        </div>} />
+                    <Route path='/page/:id' element={<ContentPage />} />
+                </Route>
+            </Routes>
+
+            
 
         </HashRouter>
     );

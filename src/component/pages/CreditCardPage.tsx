@@ -76,11 +76,13 @@ function CreditCardPage() {
             /></h2>
     <div className = "mt-4"> <p><a className='font-semibold border-2 border-green-600 rounded-md mt-4 px-2 py-0.5 text-lg' href={url}>{content}</a></p></div>
    
-    <div className='mt-4'>
+    
+
+<div className='mt-4 bottom-4'>
                 <Link className='underline font-kanit font-semibold' to='/'>Go Back</Link>
     </div>
-
 </div>
+
             
         </div>
 
