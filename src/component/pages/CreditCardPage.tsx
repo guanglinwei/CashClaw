@@ -31,7 +31,7 @@ function CreditCardPage() {
             />
             {<PageSection
                 title="Now that you understand, sign up!"
-                contentNode={<a href={url}>{content}</a>}
+                contentNode={<a className='font-semibold border-2 border-black rounded-md mt-4 px-2 py-0.5' href={url}>{content}</a>}
             />}
         </div>
     );
