@@ -1,9 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './CreditCardPage.css'
-import { PageSection } from '../ContentPage';
+import { useParams } from 'react-router-dom';
 
-const CreditCardPage = () => {
+const content = "Free $100 for signing up";
+const url = "https://refer.discover.com/s/sonicrules1212?advocate.partner_share_id=9790184177";
+
+function CreditCardPage() {
+    const { id } = useParams();
+    
+
     return (
         <div className="container">
             <PageSection
@@ -22,13 +26,30 @@ const CreditCardPage = () => {
                     "They have sign up bonuses that give you $100 for FREE and can have up to 5% cashback on categories like restaurant purchases or Amazon purchases.",
                     "This cashback can be redeemed for cash or for gift cards at a 10% discount.",
                     "Using a credit card is simply just superior to cash or a debit card.",
-                    "You can build your credit score so you can have cheaper mortgage rates or car loans when you need those."
+                    "You can build your credit score so you can have cheaper mortgage rates or car loans when you need those. TEST"
                 ]}
             />
-            {/* <PageSection
-                title="Sign Up Now:"
-                content={<a href="#">INSERT LINK HERE</a>}
-            /> */}
+            {<PageSection
+                title="Now that you understand, sign up!"
+                contentNode={<a href={url}>{content}</a>}
+            />}
+        </div>
+    );
+};
+
+
+interface PageSectionProps {
+    title: string;
+    content?: string[];
+    contentNode?: React.ReactNode;
+}
+
+const PageSection = ({ title, content, contentNode }: PageSectionProps) => {
+    return (
+        <div className='mx-12 mb-6'>
+            <h2>{title}</h2>
+            {!!content ? <ul className='list-disc mx-8'>{content.map((item: string, index: number) => <li key={index}>{item}</li>)}</ul> : <></>}
+            {!!contentNode ? contentNode : <></>}
         </div>
     );
 };
