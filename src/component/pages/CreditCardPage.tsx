@@ -39,7 +39,7 @@ function CreditCardPage() {
 
 
         //first paragraph
-        <div className = "container text-green-600 absolute left-8 pt-7">
+        <div className = "text-green-600 absolute left-8 pt-7">
         
         {/* 1st paragraph */}
         <div>
