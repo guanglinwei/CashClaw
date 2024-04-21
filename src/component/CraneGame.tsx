@@ -234,7 +234,7 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
 
         function addItems(app: any, options: any, count: any) {
             const items = [];
-            const minSizeProportion = 0.75;
+            const minSizeProportion = 0.7;
             for (let i = 0; i < count; i++) {
                 const r = 0.96 * options.finger.lowerBoneHeight / 2 * (minSizeProportion + Math.random() * (1 - minSizeProportion));
                 const x = CLAW_WIDTH + r * 2 + Math.random() * (WIDTH - CLAW_WIDTH - r * 2);
@@ -644,9 +644,9 @@ function CraneGame({ onFinish, onResume, paused, setPaused }: CraneGameProps) {
     }, []);
 
     return (
-        <div className='mx-12 py-4'>
+        <div className='mx-12 py-2'>
             <div
-                className='mx-auto w-[50%] mt-12'
+                className='mx-auto w-[50%] mt-1'
                 ref={boxRef}
             >
                 {/* <canvas ref={canvasRef} /> */}

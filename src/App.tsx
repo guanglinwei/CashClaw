@@ -26,56 +26,20 @@ import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import ContentPage from './component/ContentPage';
 // import TestPage from './component/pages/TestPage';
 function App() {
-    const displayData: PopupProps[] = [{
-        title: "Title here",
-        content: (
-            <div>
-                Put content here
-            </div>
-        )
-    },]
-    const help = () => {
-        alert('Hello')
-    };
-    /*
-      return (
-  
-          <div className="App">
-              <p className="cash">
-                  Cash Card
-              </p>
-              <div className="desc">
-                  Welcome to Cash Card!! Click the button to start and get a prize!
-              </div>
-  
-              <button className = "help"> <img src = ".\src\help.webp" onClick={help}/></button>
-  
-              <Popup className="popup"
-                  title={"Cash Card"}
-                  content={
-                  <div>
-                      <div>
-                          Thank You! Click the link to continue.
-                      </div>
-                  </div>
-                  
-                  } 
-              />
-      };
-      */
-
     const onModalClosed = () => {
         console.log("modal closed")
         setGamePaused(false);
         setPopupVisible(false)
     };
-    const possiblePopups = [<CreditCardPopup onClose={onModalClosed} />];
+    const possiblePopups = [<CreditCardPopup onClose={(onModalClosed)} />];
     const currentPopup = useRef<React.ReactNode>(undefined);
 
     const [gamePaused, setGamePaused] = useState(false);
     const [popupVisible, setPopupVisible] = useState(false);
     useEffect(() => {
+        console.log('here')
         currentPopup.current = (<Instructions onClose={onModalClosed} />);
+        console.log(currentPopup.current);
         setPopupVisible(true);
         // setGamePaused(false);
     }, []);
@@ -109,7 +73,7 @@ function App() {
                     <Route index element={
                         <div className="App h-screen">
                             {popupVisible ? currentPopup.current : <></>}
-                            <div className='text-2xl text-center mx-auto font-semibold py-2'>Cash Claw</div>
+                            <div className='text-2xl text-center mx-auto font-semibold pb-2 pt-20'>Cash Claw</div>
                             <CraneGame onFinish={onCraneGameFinish} paused={gamePaused} setPaused={setGamePaused} />
                         </div>} />
                     <Route path='/:id' element={<ContentPage />} />
