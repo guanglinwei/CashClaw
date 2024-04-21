@@ -18,12 +18,17 @@ code {
 }
 
 .pop{
-      padding-bottom: 20px;
-      background-color: #b1b1ff;
+  padding-bottom: 20px;
+  background-color: #b8b8ff !important;
 }
 
 .con{
       font-size: 40px;
+}
+
+.token{
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .caption{
